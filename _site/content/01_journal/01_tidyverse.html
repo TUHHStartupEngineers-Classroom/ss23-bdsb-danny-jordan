@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Joschka Schwarz">
-<title>MyLabJournal - Tidyverse</title>
+
+<title>MyLabJournal – tidyverse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,70 +21,8 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
@@ -102,9 +43,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -122,13 +61,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+}</script>
+
+
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MyLabJournal</span>
@@ -139,7 +82,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
@@ -147,8 +90,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-journal" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Journal</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-journal">
-<li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-journal">    
+        <li>
     <a class="dropdown-item" href="../../content/01_journal/01_tidyverse.html">
  <span class="dropdown-text">01 Tidyverse</span></a>
   </li>  
@@ -165,7 +108,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">04 Data Visualization</span></a>
   </li>  
     </ul>
-</li>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../content/02_notes/05_class_notes.html">
  <span class="menu-text">Class notes</span></a>
@@ -175,204 +118,300 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Links</span></a>
   </li>  
 </ul>
-<div class="quarto-toggle-container">
+              <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
    
   <ul class="collapse">
-<li><a href="#text-formatting" id="toc-text-formatting" class="nav-link active" data-scroll-target="#text-formatting"><span class="toc-section-number">1</span>  Text Formatting</a></li>
-  <li>
-<a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings"><span class="toc-section-number">2</span>  Headings</a>
-  <ul class="collapse">
-<li><a href="#header-2" id="toc-header-2" class="nav-link" data-scroll-target="#header-2"><span class="toc-section-number">2.1</span>  Header 2</a></li>
+  <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link active" data-scroll-target="#load-libraries"><span class="toc-section-number">1</span>  Load libraries</a></li>
+  <li><a href="#load-bikes-tabel" id="toc-load-bikes-tabel" class="nav-link" data-scroll-target="#load-bikes-tabel"><span class="toc-section-number">2</span>  Load Bikes Tabel</a></li>
+  <li><a href="#load-order-lines" id="toc-load-order-lines" class="nav-link" data-scroll-target="#load-order-lines"><span class="toc-section-number">3</span>  Load Order Lines</a></li>
+  <li><a href="#load-bike-shops" id="toc-load-bike-shops" class="nav-link" data-scroll-target="#load-bike-shops"><span class="toc-section-number">4</span>  Load Bike Shops</a></li>
+  <li><a href="#chaining-commands-with-the-pipe-and-assigning-it-to-order_items_joined_tbl" id="toc-chaining-commands-with-the-pipe-and-assigning-it-to-order_items_joined_tbl" class="nav-link" data-scroll-target="#chaining-commands-with-the-pipe-and-assigning-it-to-order_items_joined_tbl"><span class="toc-section-number">5</span>  Chaining commands with the pipe and assigning it to order_items_joined_tbl</a></li>
+  <li><a href="#wrangling-data--" id="toc-wrangling-data--" class="nav-link" data-scroll-target="#wrangling-data--"><span class="toc-section-number">6</span>  5.0 Wrangling Data —-</a></li>
+  <li><a href="#all-actions-are-chained-with-the-pipe-already.-you-can-perform-each-step-separately-and-use-glimpse-or-view-to-validate-your-code.-store-the-result-in-a-variable-at-the-end-of-the-steps." id="toc-all-actions-are-chained-with-the-pipe-already.-you-can-perform-each-step-separately-and-use-glimpse-or-view-to-validate-your-code.-store-the-result-in-a-variable-at-the-end-of-the-steps." class="nav-link" data-scroll-target="#all-actions-are-chained-with-the-pipe-already.-you-can-perform-each-step-separately-and-use-glimpse-or-view-to-validate-your-code.-store-the-result-in-a-variable-at-the-end-of-the-steps."><span class="toc-section-number">7</span>  All actions are chained with the pipe already. You can perform each step separately and use glimpse() or View() to validate your code. Store the result in a variable at the end of the steps.</a></li>
+  <li><a href="#add-the-total-price-price-quantity" id="toc-add-the-total-price-price-quantity" class="nav-link" data-scroll-target="#add-the-total-price-price-quantity"><span class="toc-section-number">8</span>  5.2 Add the total price (price * quantity)</a></li>
+  <li><a href="#add-a-column-to-a-tibble-that-uses-a-formula-style-calculation-of-other-columns" id="toc-add-a-column-to-a-tibble-that-uses-a-formula-style-calculation-of-other-columns" class="nav-link" data-scroll-target="#add-a-column-to-a-tibble-that-uses-a-formula-style-calculation-of-other-columns"><span class="toc-section-number">9</span>  Add a column to a tibble that uses a formula-style calculation of other columns</a></li>
+  <li><a href="#optional-reorganize.-using-select-to-grab-or-remove-unnecessary-columns" id="toc-optional-reorganize.-using-select-to-grab-or-remove-unnecessary-columns" class="nav-link" data-scroll-target="#optional-reorganize.-using-select-to-grab-or-remove-unnecessary-columns"><span class="toc-section-number">10</span>  5.3 Optional: Reorganize. Using select to grab or remove unnecessary columns</a></li>
+  <li><a href="#by-exact-column-name" id="toc-by-exact-column-name" class="nav-link" data-scroll-target="#by-exact-column-name"><span class="toc-section-number">11</span>  5.3.1 by exact column name</a></li>
+  <li><a href="#by-a-pattern" id="toc-by-a-pattern" class="nav-link" data-scroll-target="#by-a-pattern"><span class="toc-section-number">12</span>  5.3.2 by a pattern</a></li>
+  <li><a href="#you-can-use-the-select_helpers-to-define-patterns." id="toc-you-can-use-the-select_helpers-to-define-patterns." class="nav-link" data-scroll-target="#you-can-use-the-select_helpers-to-define-patterns."><span class="toc-section-number">13</span>  You can use the select_helpers to define patterns.</a></li>
+  <li><a href="#type-ends_with-and-click-on-select-helpers-in-the-documentation" id="toc-type-ends_with-and-click-on-select-helpers-in-the-documentation" class="nav-link" data-scroll-target="#type-ends_with-and-click-on-select-helpers-in-the-documentation"><span class="toc-section-number">14</span>  Type ?ends_with and click on Select helpers in the documentation</a></li>
+  <li><a href="#actually-we-need-the-column-order.id.-lets-bind-it-back-to-the-data" id="toc-actually-we-need-the-column-order.id.-lets-bind-it-back-to-the-data" class="nav-link" data-scroll-target="#actually-we-need-the-column-order.id.-lets-bind-it-back-to-the-data"><span class="toc-section-number">15</span>  5.3.3 Actually we need the column “order.id”. Let’s bind it back to the data</a></li>
+  <li><a href="#you-can-reorder-the-data-by-selecting-the-columns-in-your-desired-order." id="toc-you-can-reorder-the-data-by-selecting-the-columns-in-your-desired-order." class="nav-link" data-scroll-target="#you-can-reorder-the-data-by-selecting-the-columns-in-your-desired-order."><span class="toc-section-number">16</span>  5.3.4 You can reorder the data by selecting the columns in your desired order.</a></li>
+  <li><a href="#you-can-use-select_helpers-like-contains-or-everything" id="toc-you-can-use-select_helpers-like-contains-or-everything" class="nav-link" data-scroll-target="#you-can-use-select_helpers-like-contains-or-everything"><span class="toc-section-number">17</span>  You can use select_helpers like contains() or everything()</a></li>
+  <li><a href="#rename-columns-because-we-actually-wanted-underscores-instead-of-the-dots" id="toc-rename-columns-because-we-actually-wanted-underscores-instead-of-the-dots" class="nav-link" data-scroll-target="#rename-columns-because-we-actually-wanted-underscores-instead-of-the-dots"><span class="toc-section-number">18</span>  5.4 Rename columns because we actually wanted underscores instead of the dots</a></li>
+  <li><a href="#one-at-the-time-vs.-multiple-at-once" id="toc-one-at-the-time-vs.-multiple-at-once" class="nav-link" data-scroll-target="#one-at-the-time-vs.-multiple-at-once"><span class="toc-section-number">19</span>  (one at the time vs.&nbsp;multiple at once)</a></li>
+  <li><a href="#select-columns" id="toc-select-columns" class="nav-link" data-scroll-target="#select-columns"><span class="toc-section-number">20</span>  Select columns</a></li>
+  <li><a href="#add-year-column" id="toc-add-year-column" class="nav-link" data-scroll-target="#add-year-column"><span class="toc-section-number">21</span>  Add year column</a></li>
+  <li><a href="#grouping-by-year-and-summarizing-sales" id="toc-grouping-by-year-and-summarizing-sales" class="nav-link" data-scroll-target="#grouping-by-year-and-summarizing-sales"><span class="toc-section-number">22</span>  Grouping by year and summarizing sales</a></li>
+  <li><a href="#optional-add-a-column-that-turns-the-numbers-into-a-currency-format" id="toc-optional-add-a-column-that-turns-the-numbers-into-a-currency-format" class="nav-link" data-scroll-target="#optional-add-a-column-that-turns-the-numbers-into-a-currency-format"><span class="toc-section-number">23</span>  Optional: Add a column that turns the numbers into a currency format</a></li>
+  <li><a href="#makes-it-in-the-plot-optically-more-appealing" id="toc-makes-it-in-the-plot-optically-more-appealing" class="nav-link" data-scroll-target="#makes-it-in-the-plot-optically-more-appealing"><span class="toc-section-number">24</span>  (makes it in the plot optically more appealing)</a></li>
+  <li><a href="#mutatesales_text-scalesdollarsales---works-for-dollar-values" id="toc-mutatesales_text-scalesdollarsales---works-for-dollar-values" class="nav-link" data-scroll-target="#mutatesales_text-scalesdollarsales---works-for-dollar-values"><span class="toc-section-number">25</span>  mutate(sales_text = scales::dollar(sales)) &lt;- Works for dollar values</a></li>
+  <li><a href="#step-2---visualize" id="toc-step-2---visualize" class="nav-link" data-scroll-target="#step-2---visualize"><span class="toc-section-number">26</span>  Step 2 - Visualize</a></li>
+  <li><a href="#setup-canvas-with-the-columns-year-x-axis-and-sales-y-axis" id="toc-setup-canvas-with-the-columns-year-x-axis-and-sales-y-axis" class="nav-link" data-scroll-target="#setup-canvas-with-the-columns-year-x-axis-and-sales-y-axis"><span class="toc-section-number">27</span>  Setup canvas with the columns year (x-axis) and sales (y-axis)</a></li>
+  <li><a href="#geometries" id="toc-geometries" class="nav-link" data-scroll-target="#geometries"><span class="toc-section-number">28</span>  Geometries</a></li>
+  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting"><span class="toc-section-number">29</span>  Formatting</a></li>
+  <li><a href="#scale_y_continuouslabels-scalesdollar-change-the-y-axis." id="toc-scale_y_continuouslabels-scalesdollar-change-the-y-axis." class="nav-link" data-scroll-target="#scale_y_continuouslabels-scalesdollar-change-the-y-axis."><span class="toc-section-number">30</span>  scale_y_continuous(labels = scales::dollar) + # Change the y-axis.</a></li>
+  <li><a href="#again-we-have-to-adjust-it-for-euro-values" id="toc-again-we-have-to-adjust-it-for-euro-values" class="nav-link" data-scroll-target="#again-we-have-to-adjust-it-for-euro-values"><span class="toc-section-number">31</span>  Again, we have to adjust it for euro values</a></li>
+  <li><a href="#sales-by-year-and-category--" id="toc-sales-by-year-and-category--" class="nav-link" data-scroll-target="#sales-by-year-and-category--"><span class="toc-section-number">32</span>  6.2 Sales by Year and Category —-</a></li>
+  <li><a href="#step-1---manipulate" id="toc-step-1---manipulate" class="nav-link" data-scroll-target="#step-1---manipulate"><span class="toc-section-number">33</span>  Step 1 - Manipulate</a></li>
+  <li><a href="#select-columns-and-add-a-year" id="toc-select-columns-and-add-a-year" class="nav-link" data-scroll-target="#select-columns-and-add-a-year"><span class="toc-section-number">34</span>  Select columns and add a year</a></li>
+  <li><a href="#group-by-and-summarize-year-and-main-catgegory" id="toc-group-by-and-summarize-year-and-main-catgegory" class="nav-link" data-scroll-target="#group-by-and-summarize-year-and-main-catgegory"><span class="toc-section-number">35</span>  Group by and summarize year and main catgegory</a></li>
+  <li><a href="#format-text" id="toc-format-text" class="nav-link" data-scroll-target="#format-text"><span class="toc-section-number">36</span>  Format $ Text</a></li>
+  <li><a href="#step-2---visualize-1" id="toc-step-2---visualize-1" class="nav-link" data-scroll-target="#step-2---visualize-1"><span class="toc-section-number">37</span>  Step 2 - Visualize</a></li>
+  <li><a href="#set-up-x-y-fill" id="toc-set-up-x-y-fill" class="nav-link" data-scroll-target="#set-up-x-y-fill"><span class="toc-section-number">38</span>  Set up x, y, fill</a></li>
+  <li><a href="#geometries-1" id="toc-geometries-1" class="nav-link" data-scroll-target="#geometries-1"><span class="toc-section-number">39</span>  Geometries</a></li>
+  <li><a href="#facet" id="toc-facet" class="nav-link" data-scroll-target="#facet"><span class="toc-section-number">40</span>  Facet</a></li>
+  <li><a href="#formatting-1" id="toc-formatting-1" class="nav-link" data-scroll-target="#formatting-1"><span class="toc-section-number">41</span>  Formatting</a></li>
+  <li><a href="#writing-files--" id="toc-writing-files--" class="nav-link" data-scroll-target="#writing-files--"><span class="toc-section-number">42</span>  7.0 Writing Files —-</a></li>
+  <li><a href="#excel--" id="toc-excel--" class="nav-link" data-scroll-target="#excel--"><span class="toc-section-number">43</span>  7.1 Excel —-</a></li>
+  <li><a href="#csv--" id="toc-csv--" class="nav-link" data-scroll-target="#csv--"><span class="toc-section-number">44</span>  7.2 CSV —-</a></li>
+  <li><a href="#rds--" id="toc-rds--" class="nav-link" data-scroll-target="#rds--"><span class="toc-section-number">45</span>  7.3 RDS —-</a></li>
+  <li><a href="#challenge-1-analyze-sales-by-state.-split-state-and-city.-find-highest-revenue-state.-update-data." id="toc-challenge-1-analyze-sales-by-state.-split-state-and-city.-find-highest-revenue-state.-update-data." class="nav-link" data-scroll-target="#challenge-1-analyze-sales-by-state.-split-state-and-city.-find-highest-revenue-state.-update-data."><span class="toc-section-number">46</span>  CHALLENGE 1: Analyze sales by state. Split state and city. Find highest revenue state. Update data.</a></li>
+  <li><a href="#a.-seperate-column-location-into-city-and-state" id="toc-a.-seperate-column-location-into-city-and-state" class="nav-link" data-scroll-target="#a.-seperate-column-location-into-city-and-state"><span class="toc-section-number">47</span>  1a. Seperate column ‘location’ into city and state</a></li>
+  <li><a href="#b.-calculate-sales-by-state" id="toc-b.-calculate-sales-by-state" class="nav-link" data-scroll-target="#b.-calculate-sales-by-state"><span class="toc-section-number">48</span>  1b. Calculate sales by state</a></li>
+  <li><a href="#c.-determine-state-with-the-highest-turnover" id="toc-c.-determine-state-with-the-highest-turnover" class="nav-link" data-scroll-target="#c.-determine-state-with-the-highest-turnover"><span class="toc-section-number">49</span>  1c. Determine state with the highest turnover</a></li>
+  <li><a href="#d.-visualize-data" id="toc-d.-visualize-data" class="nav-link" data-scroll-target="#d.-visualize-data"><span class="toc-section-number">50</span>  1d. Visualize Data</a></li>
+  <li><a href="#a.-add-a-year-column-to-the-dataset" id="toc-a.-add-a-year-column-to-the-dataset" class="nav-link" data-scroll-target="#a.-add-a-year-column-to-the-dataset"><span class="toc-section-number">51</span>  2a. Add a ‘year’ column to the dataset</a></li>
+  <li><a href="#b.-calculate-sales-by-state-and-year" id="toc-b.-calculate-sales-by-state-and-year" class="nav-link" data-scroll-target="#b.-calculate-sales-by-state-and-year"><span class="toc-section-number">52</span>  2b. Calculate sales by state and year</a></li>
+  <li><a href="#c.-visualize-data" id="toc-c.-visualize-data" class="nav-link" data-scroll-target="#c.-visualize-data"><span class="toc-section-number">53</span>  2c. Visualize data</a></li>
   </ul>
-</li>
-  <li><a href="#links-images" id="toc-links-images" class="nav-link" data-scroll-target="#links-images"><span class="toc-section-number">3</span>  Links &amp; Images</a></li>
-  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="toc-section-number">4</span>  Lists</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="toc-section-number">5</span>  Tables</a></li>
-  <li><a href="#source-code" id="toc-source-code" class="nav-link" data-scroll-target="#source-code"><span class="toc-section-number">6</span>  Source Code</a></li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Tidyverse</h1>
-</div>
+<main class="content" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
+<p>#— #title: “Tidyverse” #author: “Danny Jordan” #—</p>
+<section id="load-libraries" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Load libraries</h1>
+<p>library(tidyverse) library(readxl)</p>
+</section>
+<section id="load-bikes-tabel" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Load Bikes Tabel</h1>
+<p>bikes_tbl &lt;- read_excel(path = “C:/Users/jorda/OneDrive/Dokumente/GitHub/ss23-bdsb-danny-jordan/00_data/01_bike_sales/01_raw_data/bikes.xlsx”)</p>
+</section>
+<section id="load-order-lines" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Load Order Lines</h1>
+<p>orderlines_tbl &lt;- read_excel(“C:/Users/jorda/OneDrive/Dokumente/GitHub/ss23-bdsb-danny-jordan/00_data/01_bike_sales/01_raw_data/orderlines.xlsx”)</p>
+</section>
+<section id="load-bike-shops" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Load Bike Shops</h1>
+<p>bikeshops_tbl &lt;- read_excel(“C:/Users/jorda/OneDrive/Dokumente/GitHub/ss23-bdsb-danny-jordan/00_data/01_bike_sales/01_raw_data/bikeshops.xlsx”)</p>
+</section>
+<section id="chaining-commands-with-the-pipe-and-assigning-it-to-order_items_joined_tbl" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Chaining commands with the pipe and assigning it to order_items_joined_tbl</h1>
+<p>bike_orderlines_joined_tbl &lt;- orderlines_tbl %&gt;% left_join(bikes_tbl, by = c(“product.id” = “bike.id”)) %&gt;% left_join(bikeshops_tbl, by = c(“customer.id” = “bikeshop.id”))</p>
+</section>
+<section id="wrangling-data--" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> 5.0 Wrangling Data —-</h1>
+</section>
+<section id="all-actions-are-chained-with-the-pipe-already.-you-can-perform-each-step-separately-and-use-glimpse-or-view-to-validate-your-code.-store-the-result-in-a-variable-at-the-end-of-the-steps." class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> All actions are chained with the pipe already. You can perform each step separately and use glimpse() or View() to validate your code. Store the result in a variable at the end of the steps.</h1>
+<p>bike_orderlines_wrangled_tbl &lt;- bike_orderlines_joined_tbl %&gt;% # 5.1 Separate category name separate(col = category, into = c(“category.1”, “category.2”, “category.3”), sep = ” - “) %&gt;%</p>
+</section>
+<section id="add-the-total-price-price-quantity" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> 5.2 Add the total price (price * quantity)</h1>
+</section>
+<section id="add-a-column-to-a-tibble-that-uses-a-formula-style-calculation-of-other-columns" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Add a column to a tibble that uses a formula-style calculation of other columns</h1>
+<p>mutate(total.price = price * quantity) %&gt;%</p>
+</section>
+<section id="optional-reorganize.-using-select-to-grab-or-remove-unnecessary-columns" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> 5.3 Optional: Reorganize. Using select to grab or remove unnecessary columns</h1>
+</section>
+<section id="by-exact-column-name" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> 5.3.1 by exact column name</h1>
+<p>select(-…1, -gender) %&gt;%</p>
+</section>
+<section id="by-a-pattern" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> 5.3.2 by a pattern</h1>
+</section>
+<section id="you-can-use-the-select_helpers-to-define-patterns." class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> You can use the select_helpers to define patterns.</h1>
+</section>
+<section id="type-ends_with-and-click-on-select-helpers-in-the-documentation" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Type ?ends_with and click on Select helpers in the documentation</h1>
+<p>select(-ends_with(“.id”)) %&gt;%</p>
+</section>
+<section id="actually-we-need-the-column-order.id.-lets-bind-it-back-to-the-data" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> 5.3.3 Actually we need the column “order.id”. Let’s bind it back to the data</h1>
+<p>bind_cols(bike_orderlines_joined_tbl %&gt;% select(order.id)) %&gt;%</p>
+</section>
+<section id="you-can-reorder-the-data-by-selecting-the-columns-in-your-desired-order." class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> 5.3.4 You can reorder the data by selecting the columns in your desired order.</h1>
+</section>
+<section id="you-can-use-select_helpers-like-contains-or-everything" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> You can use select_helpers like contains() or everything()</h1>
+<p>select(order.id, contains(“order”), contains(“model”), contains(“category”), price, quantity, total.price, everything()) %&gt;%</p>
+</section>
+<section id="rename-columns-because-we-actually-wanted-underscores-instead-of-the-dots" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> 5.4 Rename columns because we actually wanted underscores instead of the dots</h1>
+</section>
+<section id="one-at-the-time-vs.-multiple-at-once" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> (one at the time vs.&nbsp;multiple at once)</h1>
+<p>rename(bikeshop = name) %&gt;% set_names(names(.) %&gt;% str_replace_all(“\.”, “_“))</p>
+<p>library(lubridate) # Step 1 - Manipulate sales_by_year_tbl &lt;- bike_orderlines_wrangled_tbl %&gt;%</p>
+</section>
+<section id="select-columns" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Select columns</h1>
+<p>select(order_date, total_price) %&gt;%</p>
+</section>
+<section id="add-year-column" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Add year column</h1>
+<p>mutate(year = year(order_date)) %&gt;%</p>
+</section>
+<section id="grouping-by-year-and-summarizing-sales" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> Grouping by year and summarizing sales</h1>
+<p>group_by(year) %&gt;% summarize(sales = sum(total_price)) %&gt;%</p>
+</section>
+<section id="optional-add-a-column-that-turns-the-numbers-into-a-currency-format" class="level1" data-number="23">
+<h1 data-number="23"><span class="header-section-number">23</span> Optional: Add a column that turns the numbers into a currency format</h1>
+</section>
+<section id="makes-it-in-the-plot-optically-more-appealing" class="level1" data-number="24">
+<h1 data-number="24"><span class="header-section-number">24</span> (makes it in the plot optically more appealing)</h1>
+</section>
+<section id="mutatesales_text-scalesdollarsales---works-for-dollar-values" class="level1" data-number="25">
+<h1 data-number="25"><span class="header-section-number">25</span> mutate(sales_text = scales::dollar(sales)) &lt;- Works for dollar values</h1>
+<p>mutate(sales_text = scales::dollar(sales, big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“))</p>
+<p>sales_by_year_tbl ## # A tibble: 5 x 3 ## year sales sales_text<br>
+## <dbl> <dbl> <chr><br>
+## 1 2015 9930282 9.930.282 € ## 2 2016 10730507 10.730.507 € ## 3 2017 14510291 14.510.291 € ## 4 2018 12241853 12.241.853 € ## 5 2019 15017875 15.017.875 €</chr></dbl></dbl></p>
+</section>
+<section id="step-2---visualize" class="level1" data-number="26">
+<h1 data-number="26"><span class="header-section-number">26</span> Step 2 - Visualize</h1>
+<p>sales_by_year_tbl %&gt;%</p>
+</section>
+<section id="setup-canvas-with-the-columns-year-x-axis-and-sales-y-axis" class="level1" data-number="27">
+<h1 data-number="27"><span class="header-section-number">27</span> Setup canvas with the columns year (x-axis) and sales (y-axis)</h1>
+<p>ggplot(aes(x = year, y = sales)) +</p>
+</section>
+<section id="geometries" class="level1" data-number="28">
+<h1 data-number="28"><span class="header-section-number">28</span> Geometries</h1>
+<p>geom_col(fill = “#2DC6D6”) + # Use geom_col for a bar plot geom_label(aes(label = sales_text)) + # Adding labels to the bars geom_smooth(method = “lm”, se = FALSE) + # Adding a trendline</p>
+</section>
+<section id="formatting" class="level1" data-number="29">
+<h1 data-number="29"><span class="header-section-number">29</span> Formatting</h1>
+</section>
+<section id="scale_y_continuouslabels-scalesdollar-change-the-y-axis." class="level1" data-number="30">
+<h1 data-number="30"><span class="header-section-number">30</span> scale_y_continuous(labels = scales::dollar) + # Change the y-axis.</h1>
+</section>
+<section id="again-we-have-to-adjust-it-for-euro-values" class="level1" data-number="31">
+<h1 data-number="31"><span class="header-section-number">31</span> Again, we have to adjust it for euro values</h1>
+<p>scale_y_continuous(labels = scales::dollar_format(big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“)) + labs( title =”Revenue by year”, subtitle = “Upward Trend”, x = ““, # Override defaults for x and y y =”Revenue” )</p>
+</section>
+<section id="sales-by-year-and-category--" class="level1" data-number="32">
+<h1 data-number="32"><span class="header-section-number">32</span> 6.2 Sales by Year and Category —-</h1>
+</section>
+<section id="step-1---manipulate" class="level1" data-number="33">
+<h1 data-number="33"><span class="header-section-number">33</span> Step 1 - Manipulate</h1>
+<p>sales_by_year_cat_1_tbl &lt;- bike_orderlines_wrangled_tbl %&gt;%</p>
+</section>
+<section id="select-columns-and-add-a-year" class="level1" data-number="34">
+<h1 data-number="34"><span class="header-section-number">34</span> Select columns and add a year</h1>
+<p>select(order_date, total_price, category_1) %&gt;% mutate(year = year(order_date)) %&gt;%</p>
+</section>
+<section id="group-by-and-summarize-year-and-main-catgegory" class="level1" data-number="35">
+<h1 data-number="35"><span class="header-section-number">35</span> Group by and summarize year and main catgegory</h1>
+<p>group_by(year, category_1) %&gt;% summarise(sales = sum(total_price)) %&gt;% ungroup() %&gt;%</p>
+</section>
+<section id="format-text" class="level1" data-number="36">
+<h1 data-number="36"><span class="header-section-number">36</span> Format $ Text</h1>
+<p>mutate(sales_text = scales::dollar(sales, big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“))</p>
+<p>sales_by_year_cat_1_tbl<br>
+## # A tibble: 25 x 4 ## year category_1 sales sales_text ## <dbl> <chr> <dbl> <chr><br>
+## 1 2015 E-Bikes 1599048 1.599.048 € ## 2 2015 Gravel 663025 663.025 €<br>
+## 3 2015 Hybrid / City 502512 502.512 €<br>
+## 4 2015 Mountain 3254289 3.254.289 € ## 5 2015 Road 3911408 3.911.408 € ## 6 2016 E-Bikes 1916469 1.916.469 € ## 7 2016 Gravel 768794 768.794 €<br>
+## 8 2016 Hybrid / City 512346 512.346 €<br>
+## 9 2016 Mountain 3288733 3.288.733 € ## 10 2016 Road 4244165 4.244.165 € ## # … with 15 more rows</chr></dbl></chr></dbl></p>
+</section>
+<section id="step-2---visualize-1" class="level1" data-number="37">
+<h1 data-number="37"><span class="header-section-number">37</span> Step 2 - Visualize</h1>
+<p>sales_by_year_cat_1_tbl %&gt;%</p>
+</section>
+<section id="set-up-x-y-fill" class="level1" data-number="38">
+<h1 data-number="38"><span class="header-section-number">38</span> Set up x, y, fill</h1>
+<p>ggplot(aes(x = year, y = sales, fill = category_1)) +</p>
+</section>
+<section id="geometries-1" class="level1" data-number="39">
+<h1 data-number="39"><span class="header-section-number">39</span> Geometries</h1>
+<p>geom_col() + # Run up to here to get a stacked bar plot</p>
+</section>
+<section id="facet" class="level1" data-number="40">
+<h1 data-number="40"><span class="header-section-number">40</span> Facet</h1>
+<p>facet_wrap(~ category_1) +</p>
+</section>
+<section id="formatting-1" class="level1" data-number="41">
+<h1 data-number="41"><span class="header-section-number">41</span> Formatting</h1>
+<p>scale_y_continuous(labels = scales::dollar_format(big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“)) + labs( title =”Revenue by year and main category”, subtitle = “Each product category has an upward trend”, fill = “Main category” # Changes the legend name )</p>
+</section>
+<section id="writing-files--" class="level1" data-number="42">
+<h1 data-number="42"><span class="header-section-number">42</span> 7.0 Writing Files —-</h1>
+</section>
+<section id="excel--" class="level1" data-number="43">
+<h1 data-number="43"><span class="header-section-number">43</span> 7.1 Excel —-</h1>
+<p>install.packages(“writexl”) library(“writexl”) bike_orderlines_wrangled_tbl %&gt;% write_xlsx(“00_data/01_bike_sales/02_wrangled_data/bike_orderlines.xlsx”)</p>
+</section>
+<section id="csv--" class="level1" data-number="44">
+<h1 data-number="44"><span class="header-section-number">44</span> 7.2 CSV —-</h1>
+<p>bike_orderlines_wrangled_tbl %&gt;% write_csv(“00_data/01_bike_sales/02_wrangled_data/bike_orderlines.csv”)</p>
+</section>
+<section id="rds--" class="level1" data-number="45">
+<h1 data-number="45"><span class="header-section-number">45</span> 7.3 RDS —-</h1>
+<p>bike_orderlines_wrangled_tbl %&gt;% write_rds(“00_data/01_bike_sales/02_wrangled_data/bike_orderlines.rds”)</p>
+</section>
+<section id="challenge-1-analyze-sales-by-state.-split-state-and-city.-find-highest-revenue-state.-update-data." class="level1" data-number="46">
+<h1 data-number="46"><span class="header-section-number">46</span> CHALLENGE 1: Analyze sales by state. Split state and city. Find highest revenue state. Update data.</h1>
+</section>
+<section id="a.-seperate-column-location-into-city-and-state" class="level1" data-number="47">
+<h1 data-number="47"><span class="header-section-number">47</span> 1a. Seperate column ‘location’ into city and state</h1>
+<p>bike_orderlines_wrangled_tbl_seperate_city_state &lt;- bike_orderlines_wrangled_tbl %&gt;% separate(location, into = c(“city”, “state”), sep = “,”)</p>
+</section>
+<section id="b.-calculate-sales-by-state" class="level1" data-number="48">
+<h1 data-number="48"><span class="header-section-number">48</span> 1b. Calculate sales by state</h1>
+<p>sales_by_state &lt;- bike_orderlines_wrangled_tbl_seperate_city_state %&gt;% group_by(state) %&gt;% summarise(total_revenue = sum(total_price))</p>
+</section>
+<section id="c.-determine-state-with-the-highest-turnover" class="level1" data-number="49">
+<h1 data-number="49"><span class="header-section-number">49</span> 1c. Determine state with the highest turnover</h1>
+<p>highest_revenue_state &lt;- sales_by_state %&gt;% arrange(desc(total_revenue)) %&gt;% slice(1)</p>
+<p>highest_revenue_state</p>
+</section>
+<section id="d.-visualize-data" class="level1" data-number="50">
+<h1 data-number="50"><span class="header-section-number">50</span> 1d. Visualize Data</h1>
+<p>sales_by_state %&gt;% ggplot(aes(x = reorder(state, total_revenue), y = total_revenue)) + geom_bar(stat = “identity”, fill = “#2DC6D6”) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + labs(x = “State”, y = “Total Revenue”, title = “Sales by State”)</p>
+</section>
+<section id="a.-add-a-year-column-to-the-dataset" class="level1" data-number="51">
+<h1 data-number="51"><span class="header-section-number">51</span> 2a. Add a ‘year’ column to the dataset</h1>
+<p>bike_orderlines_wrangled_tbl_seperate_city_state &lt;- bike_orderlines_wrangled_tbl_seperate_city_state %&gt;% mutate(year = year(order_date))</p>
+</section>
+<section id="b.-calculate-sales-by-state-and-year" class="level1" data-number="52">
+<h1 data-number="52"><span class="header-section-number">52</span> 2b. Calculate sales by state and year</h1>
+<p>sales_by_state_year &lt;- bike_orderlines_wrangled_tbl_seperate_city_state %&gt;% group_by(state, year) %&gt;% summarise(total_revenue = sum(total_price))</p>
+</section>
+<section id="c.-visualize-data" class="level1" data-number="53">
+<h1 data-number="53"><span class="header-section-number">53</span> 2c. Visualize data</h1>
+<p>sales_by_state_year %&gt;% ggplot(aes(x = year, y = total_revenue)) + geom_bar(stat = “identity”, fill = “#2DC6D6”) + facet_wrap(~ state) + labs(x = “Year”, y = “Total Revenue”, title = “Sales by State and Year”)</p>
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Joschka Schwarz </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
 
-</header><div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can delete everything in here and start fresh.</p>
-</div>
-</div>
-<p>This is a <code>.qmd</code> file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<section id="text-formatting" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Text Formatting</h1>
-<p><em>italics</em> and <strong>bold</strong></p>
-<p>superscript<sup>2</sup> / subscript<sub>2</sub></p>
-<p><del>strikethrough</del></p>
-<p><code>verbatim code</code></p>
-<blockquote class="blockquote">
-<p>Blockquote</p>
-</blockquote>
-</section><section id="headings" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Headings</h1>
-<section id="header-2" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="header-2">
-<span class="header-section-number">2.1</span> Header 2</h2>
-<section id="header-3" class="level3"><h3 class="anchored" data-anchor-id="header-3">Header 3</h3>
-<section id="header-4" class="level4"><h4 class="anchored" data-anchor-id="header-4">Header 4</h4>
-<section id="header-5" class="level5"><h5 class="anchored" data-anchor-id="header-5">Header 5</h5>
-<section id="header-6" class="level6"><h6 class="anchored" data-anchor-id="header-6">Header 6</h6>
-</section></section></section></section></section></section><section id="links-images" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Links &amp; Images</h1>
-<p><a href="https://quarto.org" class="uri">https://quarto.org</a></p>
-<p><a href="https://quarto.org">Quarto</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="../../assets/img/elephant.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Caption"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Caption</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://quarto.org"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Caption</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://quarto.org" title="An elephant"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Caption</figcaption><p></p>
-</figure>
-</div>
-</section><section id="lists" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Lists</h1>
-<ul>
-<li>
-<p>unordered list</p>
-<ul>
-<li>sub-item 1</li>
-<li>sub-item 2
-<ul>
-<li>sub-sub-item 1</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>item 2</p>
-<p>Continued (indent 4 spaces)</p>
-</li>
-</ul>
-<ol type="1">
-<li>ordered list</li>
-<li>item 2
-<ol type="i">
-<li>sub-item 1
-<ol type="A">
-<li>sub-sub-item 1</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<ol class="example" type="1">
-<li>A list whose numbering</li>
-</ol>
-<p>continues after</p>
-<ol start="2" class="example" type="1">
-<li>an interruption</li>
-</ol></section><section id="tables" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Tables</h1>
-<table class="table">
-<thead><tr class="header">
-<th style="text-align: right;">Right</th>
-<th style="text-align: left;">Left</th>
-<th>Default</th>
-<th style="text-align: center;">Center</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">12</td>
-<td>12</td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">123</td>
-<td style="text-align: left;">123</td>
-<td>123</td>
-<td style="text-align: center;">123</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">1</td>
-<td>1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table></section><section id="source-code" class="level1" data-number="6"><h1 data-number="6">
-<span class="header-section-number">6</span> Source Code</h1>
-<p>Use ``` to delimit blocks of source code:</p>
-<pre><code>code</code></pre>
-<p>Add a language to syntax highlight code blocks:</p>
-<div class="cell" data-hash="01_tidyverse_cache/html/unnamed-chunk-1_78745102f85d5cf89cad6fe4a83ca938">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] 2</code></pre>
-</div>
-</div>
-<div class="cell" data-hash="01_tidyverse_cache/html/unnamed-chunk-2_f6e8e1bca112a7054679dca3031b6157">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>cars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</section>
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["speed"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["dist"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"4","2":"2"},{"1":"4","2":"10"},{"1":"7","2":"4"},{"1":"7","2":"22"},{"1":"8","2":"16"},{"1":"9","2":"10"},{"1":"10","2":"18"},{"1":"10","2":"26"},{"1":"10","2":"34"},{"1":"11","2":"17"},{"1":"11","2":"28"},{"1":"12","2":"14"},{"1":"12","2":"20"},{"1":"12","2":"24"},{"1":"12","2":"28"},{"1":"13","2":"26"},{"1":"13","2":"34"},{"1":"13","2":"34"},{"1":"13","2":"46"},{"1":"14","2":"26"},{"1":"14","2":"36"},{"1":"14","2":"60"},{"1":"14","2":"80"},{"1":"15","2":"20"},{"1":"15","2":"26"},{"1":"15","2":"54"},{"1":"16","2":"32"},{"1":"16","2":"40"},{"1":"17","2":"32"},{"1":"17","2":"40"},{"1":"17","2":"50"},{"1":"18","2":"42"},{"1":"18","2":"56"},{"1":"18","2":"76"},{"1":"18","2":"84"},{"1":"19","2":"36"},{"1":"19","2":"46"},{"1":"19","2":"68"},{"1":"20","2":"32"},{"1":"20","2":"48"},{"1":"20","2":"52"},{"1":"20","2":"56"},{"1":"20","2":"64"},{"1":"22","2":"66"},{"1":"23","2":"54"},{"1":"24","2":"70"},{"1":"24","2":"92"},{"1":"24","2":"93"},{"1":"24","2":"120"},{"1":"25","2":"85"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<div class="cell" data-hash="01_tidyverse_cache/html/unnamed-chunk-3_c54f7526e0f7f04368360fa7b6e5663a">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">plot</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="01_tidyverse_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="01_tidyverse_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -621,7 +660,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":true,"closeEffect":"zoom","openEffect":"zoom"});</script>
+
 
 
 </body></html>

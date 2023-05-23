@@ -1,31 +1,10 @@
 [
   {
-    "objectID": "content/03_other/06_links.html",
-    "href": "content/03_other/06_links.html",
-    "title": "Links",
-    "section": "",
-    "text": "R is a free open-source programming language that can be used for statistical analysis, data-simulation, graphing, and lots of other stuff. Another free program is R-studio, that provides a nice graphic interface for R. Download R first, then download R-studio. Both can run on PCs, Macs or Linux. Students will be learning R in the stats labs using the lab manual .\n\n\n\n\nGoogle is great, Google your problem\nStackoverflow is great, google will often take you there because someone has already asked your question, and someone else has answered, usually many people have answered your question many ways."
-  },
-  {
-    "objectID": "content/01_journal/03_data_wrangling.html",
-    "href": "content/01_journal/03_data_wrangling.html",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "Note\n\n\n\nYou can delete everything in here and start fresh."
-  },
-  {
-    "objectID": "content/01_journal/04_data_visualization.html",
-    "href": "content/01_journal/04_data_visualization.html",
-    "title": "Data Visualization",
-    "section": "",
-    "text": "Note\n\n\n\nYou can delete everything in here and start fresh."
-  },
-  {
     "objectID": "content/01_journal/01_tidyverse.html",
     "href": "content/01_journal/01_tidyverse.html",
-    "title": "Tidyverse",
+    "title": "MyLabJournal",
     "section": "",
-    "text": "Note\n\n\n\nYou can delete everything in here and start fresh.\nThis is a .qmd file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "#— #title: “Tidyverse” #author: “Danny Jordan” #—\n\n1 Load libraries\nlibrary(tidyverse) library(readxl)\n\n\n2 Load Bikes Tabel\nbikes_tbl <- read_excel(path = “C:/Users/jorda/OneDrive/Dokumente/GitHub/ss23-bdsb-danny-jordan/00_data/01_bike_sales/01_raw_data/bikes.xlsx”)\n\n\n3 Load Order Lines\norderlines_tbl <- read_excel(“C:/Users/jorda/OneDrive/Dokumente/GitHub/ss23-bdsb-danny-jordan/00_data/01_bike_sales/01_raw_data/orderlines.xlsx”)\n\n\n4 Load Bike Shops\nbikeshops_tbl <- read_excel(“C:/Users/jorda/OneDrive/Dokumente/GitHub/ss23-bdsb-danny-jordan/00_data/01_bike_sales/01_raw_data/bikeshops.xlsx”)\n\n\n5 Chaining commands with the pipe and assigning it to order_items_joined_tbl\nbike_orderlines_joined_tbl <- orderlines_tbl %>% left_join(bikes_tbl, by = c(“product.id” = “bike.id”)) %>% left_join(bikeshops_tbl, by = c(“customer.id” = “bikeshop.id”))\n\n\n6 5.0 Wrangling Data —-\n\n\n7 All actions are chained with the pipe already. You can perform each step separately and use glimpse() or View() to validate your code. Store the result in a variable at the end of the steps.\nbike_orderlines_wrangled_tbl <- bike_orderlines_joined_tbl %>% # 5.1 Separate category name separate(col = category, into = c(“category.1”, “category.2”, “category.3”), sep = ” - “) %>%\n\n\n8 5.2 Add the total price (price * quantity)\n\n\n9 Add a column to a tibble that uses a formula-style calculation of other columns\nmutate(total.price = price * quantity) %>%\n\n\n10 5.3 Optional: Reorganize. Using select to grab or remove unnecessary columns\n\n\n11 5.3.1 by exact column name\nselect(-…1, -gender) %>%\n\n\n12 5.3.2 by a pattern\n\n\n13 You can use the select_helpers to define patterns.\n\n\n14 Type ?ends_with and click on Select helpers in the documentation\nselect(-ends_with(“.id”)) %>%\n\n\n15 5.3.3 Actually we need the column “order.id”. Let’s bind it back to the data\nbind_cols(bike_orderlines_joined_tbl %>% select(order.id)) %>%\n\n\n16 5.3.4 You can reorder the data by selecting the columns in your desired order.\n\n\n17 You can use select_helpers like contains() or everything()\nselect(order.id, contains(“order”), contains(“model”), contains(“category”), price, quantity, total.price, everything()) %>%\n\n\n18 5.4 Rename columns because we actually wanted underscores instead of the dots\n\n\n19 (one at the time vs. multiple at once)\nrename(bikeshop = name) %>% set_names(names(.) %>% str_replace_all(“\\.”, “_“))\nlibrary(lubridate) # Step 1 - Manipulate sales_by_year_tbl <- bike_orderlines_wrangled_tbl %>%\n\n\n20 Select columns\nselect(order_date, total_price) %>%\n\n\n21 Add year column\nmutate(year = year(order_date)) %>%\n\n\n22 Grouping by year and summarizing sales\ngroup_by(year) %>% summarize(sales = sum(total_price)) %>%\n\n\n23 Optional: Add a column that turns the numbers into a currency format\n\n\n24 (makes it in the plot optically more appealing)\n\n\n25 mutate(sales_text = scales::dollar(sales)) <- Works for dollar values\nmutate(sales_text = scales::dollar(sales, big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“))\nsales_by_year_tbl ## # A tibble: 5 x 3 ## year sales sales_text\n##   \n## 1 2015 9930282 9.930.282 € ## 2 2016 10730507 10.730.507 € ## 3 2017 14510291 14.510.291 € ## 4 2018 12241853 12.241.853 € ## 5 2019 15017875 15.017.875 €\n\n\n26 Step 2 - Visualize\nsales_by_year_tbl %>%\n\n\n27 Setup canvas with the columns year (x-axis) and sales (y-axis)\nggplot(aes(x = year, y = sales)) +\n\n\n28 Geometries\ngeom_col(fill = “#2DC6D6”) + # Use geom_col for a bar plot geom_label(aes(label = sales_text)) + # Adding labels to the bars geom_smooth(method = “lm”, se = FALSE) + # Adding a trendline\n\n\n29 Formatting\n\n\n30 scale_y_continuous(labels = scales::dollar) + # Change the y-axis.\n\n\n31 Again, we have to adjust it for euro values\nscale_y_continuous(labels = scales::dollar_format(big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“)) + labs( title =”Revenue by year”, subtitle = “Upward Trend”, x = ““, # Override defaults for x and y y =”Revenue” )\n\n\n32 6.2 Sales by Year and Category —-\n\n\n33 Step 1 - Manipulate\nsales_by_year_cat_1_tbl <- bike_orderlines_wrangled_tbl %>%\n\n\n34 Select columns and add a year\nselect(order_date, total_price, category_1) %>% mutate(year = year(order_date)) %>%\n\n\n35 Group by and summarize year and main catgegory\ngroup_by(year, category_1) %>% summarise(sales = sum(total_price)) %>% ungroup() %>%\n\n\n36 Format $ Text\nmutate(sales_text = scales::dollar(sales, big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“))\nsales_by_year_cat_1_tbl\n## # A tibble: 25 x 4 ## year category_1 sales sales_text ##    \n## 1 2015 E-Bikes 1599048 1.599.048 € ## 2 2015 Gravel 663025 663.025 €\n## 3 2015 Hybrid / City 502512 502.512 €\n## 4 2015 Mountain 3254289 3.254.289 € ## 5 2015 Road 3911408 3.911.408 € ## 6 2016 E-Bikes 1916469 1.916.469 € ## 7 2016 Gravel 768794 768.794 €\n## 8 2016 Hybrid / City 512346 512.346 €\n## 9 2016 Mountain 3288733 3.288.733 € ## 10 2016 Road 4244165 4.244.165 € ## # … with 15 more rows\n\n\n37 Step 2 - Visualize\nsales_by_year_cat_1_tbl %>%\n\n\n38 Set up x, y, fill\nggplot(aes(x = year, y = sales, fill = category_1)) +\n\n\n39 Geometries\ngeom_col() + # Run up to here to get a stacked bar plot\n\n\n40 Facet\nfacet_wrap(~ category_1) +\n\n\n41 Formatting\nscale_y_continuous(labels = scales::dollar_format(big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“)) + labs( title =”Revenue by year and main category”, subtitle = “Each product category has an upward trend”, fill = “Main category” # Changes the legend name )\n\n\n42 7.0 Writing Files —-\n\n\n43 7.1 Excel —-\ninstall.packages(“writexl”) library(“writexl”) bike_orderlines_wrangled_tbl %>% write_xlsx(“00_data/01_bike_sales/02_wrangled_data/bike_orderlines.xlsx”)\n\n\n44 7.2 CSV —-\nbike_orderlines_wrangled_tbl %>% write_csv(“00_data/01_bike_sales/02_wrangled_data/bike_orderlines.csv”)\n\n\n45 7.3 RDS —-\nbike_orderlines_wrangled_tbl %>% write_rds(“00_data/01_bike_sales/02_wrangled_data/bike_orderlines.rds”)\n\n\n46 CHALLENGE 1: Analyze sales by state. Split state and city. Find highest revenue state. Update data.\n\n\n47 1a. Seperate column ‘location’ into city and state\nbike_orderlines_wrangled_tbl_seperate_city_state <- bike_orderlines_wrangled_tbl %>% separate(location, into = c(“city”, “state”), sep = “,”)\n\n\n48 1b. Calculate sales by state\nsales_by_state <- bike_orderlines_wrangled_tbl_seperate_city_state %>% group_by(state) %>% summarise(total_revenue = sum(total_price))\n\n\n49 1c. Determine state with the highest turnover\nhighest_revenue_state <- sales_by_state %>% arrange(desc(total_revenue)) %>% slice(1)\nhighest_revenue_state\n\n\n50 1d. Visualize Data\nsales_by_state %>% ggplot(aes(x = reorder(state, total_revenue), y = total_revenue)) + geom_bar(stat = “identity”, fill = “#2DC6D6”) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + labs(x = “State”, y = “Total Revenue”, title = “Sales by State”)\n\n\n51 2a. Add a ‘year’ column to the dataset\nbike_orderlines_wrangled_tbl_seperate_city_state <- bike_orderlines_wrangled_tbl_seperate_city_state %>% mutate(year = year(order_date))\n\n\n52 2b. Calculate sales by state and year\nsales_by_state_year <- bike_orderlines_wrangled_tbl_seperate_city_state %>% group_by(state, year) %>% summarise(total_revenue = sum(total_price))\n\n\n53 2c. Visualize data\nsales_by_state_year %>% ggplot(aes(x = year, y = total_revenue)) + geom_bar(stat = “identity”, fill = “#2DC6D6”) + facet_wrap(~ state) + labs(x = “Year”, y = “Total Revenue”, title = “Sales by State and Year”)"
   },
   {
     "objectID": "content/01_journal/01_tidyverse.html#header-2",
@@ -42,11 +21,32 @@
     "text": "Note\n\n\n\nYou can delete everything in here and start fresh."
   },
   {
+    "objectID": "content/01_journal/03_data_wrangling.html",
+    "href": "content/01_journal/03_data_wrangling.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Note\n\n\n\nYou can delete everything in here and start fresh."
+  },
+  {
+    "objectID": "content/01_journal/04_data_visualization.html",
+    "href": "content/01_journal/04_data_visualization.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "Note\n\n\n\nYou can delete everything in here and start fresh."
+  },
+  {
     "objectID": "content/02_notes/05_class_notes.html",
     "href": "content/02_notes/05_class_notes.html",
     "title": "Class Notes",
     "section": "",
     "text": "IMPORTANT: You can delete everything in here and start fresh. You might want to start by not deleting anything above this line until you know what that stuff is doing.\nThis is an .qmd file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header."
+  },
+  {
+    "objectID": "content/03_other/06_links.html",
+    "href": "content/03_other/06_links.html",
+    "title": "Links",
+    "section": "",
+    "text": "R is a free open-source programming language that can be used for statistical analysis, data-simulation, graphing, and lots of other stuff. Another free program is R-studio, that provides a nice graphic interface for R. Download R first, then download R-studio. Both can run on PCs, Macs or Linux. Students will be learning R in the stats labs using the lab manual .\n\n\n\n\nGoogle is great, Google your problem\nStackoverflow is great, google will often take you there because someone has already asked your question, and someone else has answered, usually many people have answered your question many ways."
   },
   {
     "objectID": "index.html",
