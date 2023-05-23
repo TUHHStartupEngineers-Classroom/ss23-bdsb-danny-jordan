@@ -1,5 +1,5 @@
 ---
-title: "My Lab Journal"
+title: "My Lab Journal TEST TEST"
 subtitle: "Business Data Science Basics"
 author: "Joschka Schwarz"
 ---
